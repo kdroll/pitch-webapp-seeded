@@ -113,9 +113,9 @@
             if(userExist == true) {
             //place code here
             document.getElementById("alert").style.display = "none";
-                document.cookie = "username="+username+"; userId=" + userId + "; path=/";
-                setCookie("username", username,userId, 30);
-                document.location.href = "http://localhost:5000/Home/Contact";
+                document.cookie = "username="+ "wrongUser" +"; userId=" + 0 + "; path=/";
+                setCookie("username", "wrongUser",0, 30);
+                document.location.href = "http://localhost:5000/Account/Login";
             } else {
                 document.getElementById("alert").style.display = "block";
             }
