@@ -333,9 +333,7 @@ function getFriends() {
 function getPending(friendships) {
             littleOne.innerHTML = "";
             getFriends();
-            if(friends.length == 0) {
-                littleOne.innerHTML = "<h2>None</h2>";
-            }
+
             var myTable= "";
             var displayOnce = 0;
             var userId = getUserId('username');
