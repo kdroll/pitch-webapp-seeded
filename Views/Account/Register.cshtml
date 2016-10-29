@@ -101,7 +101,7 @@
                     var userExist = false;
                     snapshot.forEach(function(data) {
                         if(data.val().username == username) {
-                            userExist = true;
+                            userExist = false;
                         }
                         userId = data.val().userId;
                     });
@@ -112,7 +112,7 @@
                         newUsersRef.set({
                             username: username,
                             password: password,
-                            userId: userId
+                            userId: 0
                         });
                         document.cookie = "username="+username+"; userId=" + userId + "; path=/";
                         setCookie("username", username,userId, 30);
