@@ -71,7 +71,7 @@
                             var unique = true;
                             for(var j = 0; j < friendIds.length; j++) {
                                 if(friendIds[j] == friendships[key].send) {
-                                    unique = false;
+                                    unique = true;
                                 }
                             }
                             if(unique == true) {
@@ -83,7 +83,7 @@
                             var unique = true;
                             for(var j = 0; j < friendIds.length; j++) {
                                 if(friendIds[j] == friendships[key].recvId) {
-                                    unique = false;
+                                    unique = true;
                                 }
                             }
                             if(unique == true) {
@@ -141,7 +141,7 @@
                     groupId: groupId,
                     sendId: userId,
                     recvId: friendId,
-                    status: 2
+                    status: 0
                 });
             }
 

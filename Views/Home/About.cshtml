@@ -116,7 +116,7 @@ function getFeed(feed) {
     var userId = getUserId('username');
     dbRef.orderByValue().on("value", function(snapshot) {
     dbRef2.orderByValue().on("value", function(snapshot2) {
-        for(var j = keys.length-1; j > -1; j--) {
+        for(var j = 0; j < keys.length-1; j++) {
             var keyHasBeenUsed = false;
             snapshot2.forEach(function(data2) {
             snapshot.forEach(function(data) {
@@ -159,7 +159,7 @@ function getFeed(feed) {
                         feedString += '<div class = "row">';
                         //feedString += '<p style="">I love the song "' + getSongInfo(feed[keys[j]].songId) + '</p>';
                         feedString += '<form action="Playlist/' + feed[keys[j]].groupId + '">';
-                        feedString += '<a href="Playlist/' + feed[keys[j]].groupId + '?">Check out this Playlist</a>';
+                        feedString += '<a href="Playlist/' + feed[keys[j]].groupId + '">Check out this Playlist</a>';
                         feedString += '</form>';
                         feedString += '</div>';    
                         //feedString += '<div class="row" style="">';
