@@ -350,8 +350,7 @@ input:-moz-placeholder {
                   console.error("request timed out. ", xhr);
                }
                var queryString = document.getElementById("searchText").value;
-               var queryString2 = queryString.split(' ').join('+');
-               var requestString = "https://api.spotify.com/v1/search?type=track&q="+queryString2;
+               var requestString = "https://api.spotify.com/search?type=track&q="+queryString;
                xhr.open("get", requestString);
                xhr.send();
               } else if(searchType == "User") {
@@ -389,13 +388,13 @@ input:-moz-placeholder {
               var searchType = document.getElementById("searchtype").elements["searchtype"].value;
               var obj = JSON.parse(apiResponse);
 
-              if (obj.tracks.next === null) {
-                document.getElementById("nextpage").disabled = true;
-              } else {
+              if (obj.tracks.next == null) {
                 document.getElementById("nextpage").disabled = false;
+              } else {
+                document.getElementById("nextpage").disabled = true;
                 document.getElementById("nextpage").onclick = function() {spotifySearch2(obj.tracks.next)};
               }
-              if (obj.tracks.previous === null) {
+              if (obj.tracks.previous == null) {
                 document.getElementById("prevpage").disabled = true;
               } else {
                 document.getElementById("prevpage").disabled = false;
@@ -423,7 +422,7 @@ input:-moz-placeholder {
                     superstring += obj.tracks.items[i].album.name;
                     superstring += "</td>";
                     superstring += "<td>";
-                    superstring += "<div class=\"dropdown\"><button class=\"btn btn-primary dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\">Add To... <span class=\"caret\"></span></button><ul class=\"dropdown-menu\">"
+                    superstring += "<div class=\"dropdown\"><button class=\"btn btn-primary \" type=\"button\" style=\"block\">Add To... <span class=\"caret\"></span></button><ul class=\"dropdown-menu\">"
                     
                     
                     
@@ -553,7 +552,7 @@ input:-moz-placeholder {
                                         friendshipExists = true;
                                     }
                                 });
-                                if(friendshipExists == false) {
+                                if(true) {
                                 var newFriendshipsref = friendshipsref.push();
                                 newFriendshipsref.set({
                                   sendId: sendId,
