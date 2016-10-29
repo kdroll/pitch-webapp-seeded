@@ -269,7 +269,7 @@ section{
                 if(xhr.readyState === 4) {
                   if (xhr.status === 200) {
                       var obj = JSON.parse(xhr.response);
-                      returnString = "<td>" + obj.artists[0].name + "</td><td>" + obj.album.name + "</td><td>" + obj.name + "</td>";
+                      returnString = "<td>" + obj.name + "</td><td>" + obj.artists[0].name + "</td><td>" + obj.album.name + "</td>";
                   } else {
                       console.error("Search failed. ", xhr.status);
                   }
@@ -278,7 +278,7 @@ section{
               xhr.ontimeout = function() {
                 console.error("request timed out. ", xhr);
               }
-              xhr.open("get", "https://api.spotify.com/v1/tracks/" + songId, false);
+              xhr.open("get", "https://api.spotify.com/v1/tracks/" + songId);
               xhr.send();
               return returnString;
             }
