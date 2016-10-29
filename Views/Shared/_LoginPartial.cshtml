@@ -30,7 +30,7 @@ else
 
 <script type="text/javascript">
     var el = document.getElementById('LogoutButton');
-    el.onclick = clear;
+    
 
     function getCookie(cname) {
         var name = cname + "=";
@@ -79,16 +79,5 @@ else
         }
     } 
 
-    function clear() {
-        
-        var d = new Date();
-        var exdays = 30;
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        var expires = "expires=" + d.toGMTString();
-        var separator = ":";
-        var values = ":";
-        document.cookie = "username"+"="+values+"; "+expires + ";path=/";
 
-        return true;
-    }
  </script>

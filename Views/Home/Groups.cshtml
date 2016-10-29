@@ -361,7 +361,7 @@ section{
                         var i = 0;
                         var notInGroup = false;
                         snapshot.forEach(function(data) {
-                            if(data.val().groupId == groups[key].groupId && data.val().status == 1) {
+                            
                                 var isUnique = true;
                                 if((data.val().recvId == userId || data.val().sendId == userId)) {
                                     notInGroup = true;
@@ -375,7 +375,7 @@ section{
                                     userIds[i] = data.val().recvId;
                                     i++;
                                 }
-                            }
+                            
                         });
                         var k = 0;
                         snapshot2.forEach(function(data2) {
